@@ -1,0 +1,128 @@
+/* ===== Estilos generales ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff7f9;
+  color: #444;
+  line-height: 1.6;
+}
+
+h2 {
+  color: #d6457a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+/* ===== Encabezado ===== */
+.encabezado {
+  background-color: #f9c9d8;
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.encabezado h1 {
+  color: #b8305f;
+  font-size: 2.2rem;
+}
+
+.encabezado nav {
+  margin-top: 16px;
+}
+
+.encabezado nav a {
+  color: #b8305f;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.encabezado nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Catálogo de productos ===== */
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.producto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #fde3ec; /* se ve rosado mientras no haya foto */
+}
+
+.producto h3 {
+  margin: 12px 0 6px;
+  color: #333;
+}
+
+.producto p {
+  font-size: 0.9rem;
+}
+
+.precio {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d6457a;
+}
+
+/* ===== Sobre mí y contacto ===== */
+#nosotros p,
+#contacto p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contacto {
+  text-align: center;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.boton:hover {
+  background-color: #1ebe5a;
+}
+
+/* ===== Pie de página ===== */
+footer {
+  background-color: #f9c9d8;
+  text-align: center;
+  padding: 20px;
+  color: #b8305f;
+  font-size: 0.9rem;
+}
