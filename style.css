@@ -1,0 +1,281 @@
+/* ===== Estilos generales ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Punto 2: color de fondo de la página */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff7f9;
+  color: #444;
+  line-height: 1.6;
+  transition: background-color 0.5s; /* el cambio de color del punto 11 se ve suave */
+}
+
+/* Punto 4: color del texto de los encabezados... */
+h2 {
+  color: #d6457a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ...y tipo de fuente de los párrafos */
+p {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.texto-centrado {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== Encabezado ===== */
+.encabezado {
+  background-color: #f9c9d8;
+  text-align: center;
+  padding: 30px 16px 40px;
+  overflow: hidden; /* evita que la flor animada se salga de la pantalla */
+}
+
+.encabezado h1 {
+  color: #b8305f;
+  font-size: 2.2rem;
+}
+
+.encabezado nav {
+  margin-top: 16px;
+}
+
+.encabezado nav a {
+  color: #b8305f;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.encabezado nav a:hover {
+  text-decoration: underline;
+}
+
+/* Punto 15: clase que JavaScript pone y quita para ocultar el menú */
+.oculto {
+  display: none;
+}
+
+/* ===== Punto 7: animación sencilla ===== */
+.flor-viajera {
+  font-size: 2.5rem;
+  display: inline-block;
+  animation: vaiven 3s ease-in-out infinite alternate;
+}
+
+/* La animación: va de la izquierda a la derecha girando un poco */
+@keyframes vaiven {
+  from {
+    transform: translateX(-120px) rotate(-20deg);
+  }
+  to {
+    transform: translateX(120px) rotate(20deg);
+  }
+}
+
+/* ===== Punto 5: tres columnas con flexbox ===== */
+.columnas {
+  display: flex;      /* pone los hijos uno al lado del otro */
+  gap: 20px;          /* espacio entre columnas */
+  flex-wrap: wrap;    /* en el celular, las columnas bajan una debajo de otra */
+}
+
+.columna {
+  flex: 1 1 250px;    /* las tres crecen igual; mínimo unos 250px de ancho */
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.columna .icono {
+  font-size: 2rem;
+}
+
+.columna h3 {
+  color: #b8305f;
+  margin: 8px 0;
+}
+
+/* ===== Catálogo de productos ===== */
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.producto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #fde3ec; /* se ve rosado mientras no haya foto */
+}
+
+.producto h3 {
+  margin: 12px 0 6px;
+  color: #333;
+}
+
+.producto p {
+  font-size: 0.9rem;
+}
+
+.precio {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d6457a;
+}
+
+/* ===== Punto 14: contador ===== */
+.me-gusta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.me-gusta p {
+  margin-top: 10px;
+}
+
+/* ===== Sobre mí y contacto ===== */
+#nosotros p,
+#contacto p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contacto {
+  text-align: center;
+}
+
+/* Punto 13: caja del consejo */
+.consejo {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.consejo p {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px !important;
+}
+
+/* ===== Punto 6: botones con efecto hover ===== */
+.boton {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.boton:hover {
+  background-color: #1ebe5a;
+}
+
+/* Botón rosado que usamos para todo lo de JavaScript */
+.boton-secundario {
+  background-color: #d6457a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;   /* aparece la "manito" al pasar el cursor */
+  margin-top: 12px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-secundario:hover {
+  background-color: #b8305f;
+  transform: scale(1.05);  /* crece un poquito */
+}
+
+/* ===== Punto 12: formulario ===== */
+#formulario-registro {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;  /* un campo debajo del otro */
+}
+
+#formulario-registro label {
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+#formulario-registro input {
+  padding: 10px;
+  margin-top: 4px;
+  border: 2px solid #f9c9d8;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#formulario-registro input:focus {
+  outline: none;
+  border-color: #d6457a;
+}
+
+#mensaje-formulario {
+  margin-top: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* JavaScript pone una de estas dos clases según el resultado */
+.error {
+  color: #c0392b;
+}
+
+.exito {
+  color: #1e8e4e;
+}
+
+/* ===== Pie de página ===== */
+footer {
+  background-color: #f9c9d8;
+  text-align: center;
+  padding: 20px;
+  color: #b8305f;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin-top: 10px;
+}
